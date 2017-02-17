@@ -9,7 +9,7 @@ class HomeController extends Controller
 {
     /**
      * Create a new controller instance.
-     *
+     *为什么需要登录呢？怎么去掉这个强制登录呢？删掉 HomeController 中的构造函数即可：
      * @return void
      */
     public function __construct()
@@ -24,6 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // return view('home');
+         return view('home')->withArticles(\App\Article::all());
     }
 }
