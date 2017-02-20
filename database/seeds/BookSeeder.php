@@ -11,14 +11,14 @@ class BookSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('book')->delete();
+       DB::table('books')->delete();
 
         for ($i=0; $i < 10; $i++) {
-            \App\models\Book::create([
+            \App\Models\Book::create([
                 'list'   => 'st.hujiang.com/topic/'. rand(100000,150000).'/ ',
                 'qihao'    => '第'.($i+1).'期',
                 'name'    => 'name '.($i+1),
-                'book'    => '《book--'.($i+1).'》',
+                'book'    => '《book--'.($i+1).'》'
             ]);
         }
     }

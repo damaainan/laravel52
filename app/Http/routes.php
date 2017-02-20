@@ -16,7 +16,7 @@
 });*/
 
 Route::auth();
-
+// Route::get('home/book', 'Home/BookController@index');
 // Route::get('/home', 'HomeController@index');
 Route::get('/', 'HomeController@index');
 
@@ -29,3 +29,11 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::get('/', 'HomeController@index');
     Route::resource('article', 'ArticleController');
 });
+
+Route::group(['middleware' => 'auth','namespace' => 'Home', 'prefix' => 'home'], function() {
+    Route::get('/', 'BookController@index');
+    // Route::resource('article', 'ArticleController');
+});
+
+
+

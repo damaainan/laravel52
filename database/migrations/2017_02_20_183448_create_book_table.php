@@ -12,15 +12,15 @@ class CreateBookTable extends Migration
      */
     public function up()
     {
-         Schema::create('book', function(Blueprint $table)
-        {
-            $table->increments('id');
-            $table->string('list');
-            $table->string('qihao');
-            $table->string('name');
-            $table->string('book');
-            // $table->timestamps();
-        });
+        Schema::create('books', function(Blueprint $table)
+    {
+        $table->increments('id');
+        $table->string('list');
+        $table->string('qihao');
+        $table->string('name');
+        $table->string('book');
+        $table->timestamps();
+    });
     }
 
     /**
