@@ -30,8 +30,10 @@ Route::group(['middleware' => 'auth', 'namespace' => 'Admin', 'prefix' => 'admin
     Route::resource('article', 'ArticleController');
 });
 
-Route::group(['middleware' => 'auth','namespace' => 'Home', 'prefix' => 'home'], function() {
-    Route::get('/', 'BookController@index');
+Route::group(['middleware' => 'auth','namespace' => 'Home'], function() {
+
+    Route::get('home/book', 'BookController@index');
+    Route::resource('home/book', 'BookController');
     // Route::resource('article', 'ArticleController');
 });
 
